@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Castle\CastleController;
 use App\Http\Controllers\Site\SiteController;
-use App\Http\Controllers\Castle\CastleRoleController;
 use App\Http\Controllers\Castle\CastleUserController;
 /*
 |--------------------------------------------------------------------------
