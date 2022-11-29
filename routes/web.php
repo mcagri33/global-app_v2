@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Castle\CastleController;
 use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\Castle\CastleRoleController;
+use App\Http\Controllers\Castle\CastleUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,30 +17,27 @@ use App\Http\Controllers\Site\SiteController;
 |
 */
 
-Route::middleware('guest')->group(function () {
-    Route::get('castle/login',[CastleController::class,'index'])->name('login_form');
-    Route::post('castle/login/owner',[CastleController::class,'login'])->name('castle.login');
-    Route::get('/',[SiteController::class,'index'])
-        ->name('app.index');
-    Route::get('/project/{id}',[SiteController::class,'projectDetails'])
-        ->name('project.details');
-});
 
-Route::group(['prefix' => 'castle'], function (){
+Route::group(['prefix' => 'castle', 'middleware' => 'auth'], function (){
     Route::get('/dashboard',[CastleController::class,'dashboard'])
         ->name('castle.dashboard');
-    Route::get('/logout',[CastleController::class,'castleLogout'])
-        ->name('castle.logout');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::group(['prefix' => 'castle/user', 'middleware' => 'auth'], function (){
+    Route::get('/',[CastleUserController::class,'index'])
+        ->name('castle.user.index');
+    Route::post('/store',[CastleUserController::class,'store'])
+        ->name('castle.user.store');
+    Route::get('/edit/{id}',[CastleUserController::class,'edit'])
+        ->name('castle.user.edit');
+    Route::post('/update',[CastleUserController::class,'update'])
+        ->name('castle.user.update');
+    Route::get('/delete/{id}',[CastleUserController::class,'destroy'])
+        ->name('castle.user.delete');
 });
 
+
+
+Route::get('/',[SiteController::class,'index'])
+    ->name('app.index');
 require __DIR__.'/auth.php';
