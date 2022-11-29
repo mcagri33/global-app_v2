@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Castle\CastleController;
+use App\Http\Controllers\Site\SiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('guest')->group(function () {
+    Route::get('castle/login',[CastleController::class,'index'])->name('login_form');
+    Route::post('castle/login/owner',[CastleController::class,'login'])->name('castle.login');
+    Route::get('/',[SiteController::class,'index'])
+        ->name('app.index');
+    Route::get('/project/{id}',[SiteController::class,'projectDetails'])
+        ->name('project.details');
+});
+
+Route::group(['prefix' => 'castle'], function (){
+    Route::get('/dashboard',[CastleController::class,'dashboard'])
+        ->name('castle.dashboard');
+    Route::get('/logout',[CastleController::class,'castleLogout'])
+        ->name('castle.logout');
 });
 
 Route::get('/dashboard', function () {
