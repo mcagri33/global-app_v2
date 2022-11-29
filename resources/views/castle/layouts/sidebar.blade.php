@@ -18,7 +18,7 @@
                 <div class="menu-title">Panel</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.dashboard')}}"><i class="bi bi-circle"></i>İstatistik</a>
+                <li> <a href="{{route('castle.dashboard')}}"><i class="bi bi-circle"></i>Dashboard</a>
                 </li>
                 </li>
             </ul>
@@ -27,12 +27,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-grid-fill"></i>
                 </div>
-                <div class="menu-title">Admin Yönetimi</div>
+                <div class="menu-title">User Management</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.admin.index')}}"><i class="bi bi-circle"></i>Admin Kullanıcı Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Users</a>
                 </li>
-                <li> <a href="{{route('castle.admin.add')}}"><i class="bi bi-circle"></i>Admin Kullanıcı Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Roles</a>
                 </li>
             </ul>
         </li>
@@ -40,12 +40,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-grid-fill"></i>
                 </div>
-                <div class="menu-title">Dil Yönetimi</div>
+                <div class="menu-title">Language Management</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.language.index')}}"><i class="bi bi-circle"></i>Dil Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Language List</a>
                 </li>
-                <li> <a href="{{route('castle.language.add')}}"><i class="bi bi-circle"></i>Dil Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Language Add</a>
                 </li>
             </ul>
         </li>
@@ -53,16 +53,14 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-grid-fill"></i>
                 </div>
-                <div class="menu-title">Genel Ayarlar</div>
+                <div class="menu-title">General Settings</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.basicinfo')}}"><i class="bi bi-circle"></i>Site Bilgileri</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Web Site İnfo</a>
                 </li>
-                <li> <a href="{{route('castle.social.index')}}"><i class="bi bi-circle"></i>Sosyal Medya</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Social Media</a>
                 </li>
-                <li> <a href="{{route('castle.flink.index')}}"><i class="bi bi-circle"></i>Footer Linkler</a>
-                </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Bakım Modu</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Maniantece Mode</a>
                 </li>
             </ul>
         </li>
@@ -74,7 +72,7 @@
                 <div class="menu-title">Menü Yönetimi</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.menu.index')}}"><i class="bi bi-circle"></i>Menüler</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Menus</a>
             </ul>
         </li>
         <li>
@@ -84,9 +82,9 @@
                 <div class="menu-title">Blog</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.blog_category.index')}}"><i class="bi bi-circle"></i>Kategoriler</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Categories</a>
                 </li>
-                <li> <a href="{{route('castle.blog.index')}}"><i class="bi bi-circle"></i>Yazılar</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Posts</a>
                 </li>
             </ul>
         </li>
@@ -97,9 +95,9 @@
                 <div class="menu-title">Servisler</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.service_category.index')}}"><i class="bi bi-circle"></i>Kategoriler</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Categories</a>
                 </li>
-                <li> <a href="{{route('castle.service.index')}}"><i class="bi bi-circle"></i>Servisler</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Services</a>
                 </li>
             </ul>
         </li>
@@ -110,23 +108,9 @@
                 <div class="menu-title">Slider</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.slider.index')}}"><i class="bi bi-circle"></i>Slider Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Slider List</a>
                 </li>
-                <li> <a href="{{route('castle.slider.add')}}"><i class="bi bi-circle"></i>Slider Ekle</a>
-                </li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bi bi-basket2-fill"></i>
-                </div>
-                <div class="menu-title">Sayfalar</div>
-            </a>
-            <ul>
-                <li> <a href="{{route('castle.page.index')}}"><i class="bi bi-circle"></i>Sayfa Listesi</a>
-                </li>
-                <li> <a href="{{route('castle.page.add')}}"><i class="bi bi-circle"></i>Sayfa Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Slider Add</a>
                 </li>
             </ul>
         </li>
@@ -135,12 +119,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-basket2-fill"></i>
                 </div>
-                <div class="menu-title">Takımım</div>
+                <div class="menu-title">Pages</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.team.index')}}"><i class="bi bi-circle"></i>Takım Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Page List</a>
                 </li>
-                <li> <a href="{{route('castle.team.add')}}"><i class="bi bi-circle"></i>Takım Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Page Add</a>
                 </li>
             </ul>
         </li>
@@ -149,12 +133,26 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bi bi-basket2-fill"></i>
                 </div>
-                <div class="menu-title">Projeler</div>
+                <div class="menu-title">My Team</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.project.index')}}"><i class="bi bi-circle"></i>Proje Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Team List</a>
                 </li>
-                <li> <a href="{{route('castle.project.add')}}"><i class="bi bi-circle"></i>Proje Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Team Add</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-basket2-fill"></i>
+                </div>
+                <div class="menu-title">Projects</div>
+            </a>
+            <ul>
+                <li> <a href="#"><i class="bi bi-circle"></i>Project List</a>
+                </li>
+                <li> <a href="#"><i class="bi bi-circle"></i>Project Add</a>
                 </li>
             </ul>
         </li>
@@ -166,9 +164,9 @@
                 <div class="menu-title">Partner</div>
             </a>
             <ul>
-                <li> <a href="{{route('castle.partner.index')}}"><i class="bi bi-circle"></i>Partner Listesi</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Partner List</a>
                 </li>
-                <li> <a href="{{route('castle.partner.add')}}"><i class="bi bi-circle"></i>Partner Ekle</a>
+                <li> <a href="#"><i class="bi bi-circle"></i>Partner Add</a>
                 </li>
             </ul>
         </li>
