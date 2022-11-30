@@ -30,9 +30,7 @@
                 <div class="menu-title">User Management</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Users</a>
-                </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Roles</a>
+                <li> <a href="{{route('castle.user.index')}}"><i class="bi bi-circle"></i>Users</a>
                 </li>
             </ul>
         </li>
@@ -43,9 +41,9 @@
                 <div class="menu-title">Language Management</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Language List</a>
+                <li> <a href="{{route('castle.language.index')}}"><i class="bi bi-circle"></i>Language List</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Language Add</a>
+                <li> <a href="{{route('castle.language.add')}}"><i class="bi bi-circle"></i>Language Add</a>
                 </li>
             </ul>
         </li>
@@ -82,9 +80,9 @@
                 <div class="menu-title">Blog</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Categories</a>
+                <li> <a href="{{route('castle.bcategory.index')}}"><i class="bi bi-circle"></i>Categories</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Posts</a>
+                <li> <a href="{{route('castle.bpost.index')}}"><i class="bi bi-circle"></i>Posts</a>
                 </li>
             </ul>
         </li>
