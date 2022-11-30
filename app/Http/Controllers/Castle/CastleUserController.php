@@ -23,8 +23,7 @@ class CastleUserController extends Controller
     public function index()
     {
         $users = User::paginate(10);
-        $roles = Role::all();
-        return view('castle.user.index', compact('users','roles'));
+        return view('castle.user.index', compact('users'));
     }
 
     /**

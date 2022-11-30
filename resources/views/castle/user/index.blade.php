@@ -16,7 +16,7 @@
             </div>
         </div>
         <!--end breadcrumb-->
-
+@include('castle.layouts.alert')
         <div class="card">
             <div class="card-header py-3">
                 <h6 class="mb-0">@yield('title')</h6>
@@ -85,7 +85,6 @@
                                             <thead class="table-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Role</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Status</th>
@@ -98,15 +97,6 @@
                                                 <tr>
                                                     <td>{{$users ->perPage()*($users->currentPage()-1)+$count}}</td>
                                                     <?php $count++; ?>
-                                                    <td>
-                                                        @if($user->roles)
-                                                            @foreach($user->roles as $role)
-                                                                [{{ $role->name }}]
-                                                            @endforeach
-                                                        @else
-                                                            -
-                                                        @endif
-                                                    </td>
                                                     <td>{{$user->name}}</td>
                                                     <td>{{$user->email}}</td>
                                                     @if($user->status == 1)

@@ -28,21 +28,29 @@
                         <div class="border p-3 rounded">
                             <form class="row g-3" action="{{route('castle.role.update')}}" method="post">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$roleFind->id}}">
+                                <input type="hidden" name="id" value="{{$userFind->id}}">
                                 <div class="col-12">
                                     <label class="form-label">Name</label>
-                                    <input type="text" name="name" value="{{$roleFind->name}}" class="form-control" placeholder="Slider Title">
+                                    <input type="text" name="name" value="{{$userFind->name}}" class="form-control" placeholder="Slider Title">
                                     @error("name")
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
 
+                                <div class="col-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="{{$userFind->email}}" name="email" value="{{old('email')}}"
+                                           placeholder="Email">
+                                    @error("email")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
 
                                 <div class="col-12">
                                     <label class="form-label">Status</label>
                                     <select class="form-select" name="status">
-                                        <option value="1" {{$roleFind->status == 1 ? "selected" : ""}}>Active</option>
-                                        <option value="0" {{$roleFind->status == 0 ? "selected" : ""}}>Passive</option>
+                                        <option value="1" {{$userFind->status == 1 ? "selected" : ""}}>Active</option>
+                                        <option value="0" {{$userFind->status == 0 ? "selected" : ""}}>Passive</option>
                                     </select>
                                     @error("status")
                                     <span class="text-danger">{{$message}}</span>
