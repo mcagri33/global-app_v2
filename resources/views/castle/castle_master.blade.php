@@ -110,6 +110,8 @@
 <script src="{{asset('assets/castle/plugins/bootstrap-material-datetimepicker/js/moment.min.js')}}"></script>
 <script src="{{asset('assets/castle/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js')}}"></script>
 <script src="{{asset('assets/castle/js/form-date-time-pickes.js')}}"></script>
+<script src="{{asset('assets/castle/plugins/input-tags/js/tagsinput.js')}}"></script>
+
 </body>
 
 </html>
