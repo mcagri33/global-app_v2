@@ -14,6 +14,8 @@
     "SERVICES": "SERVICES",
     "NEWS" : "NEWS",
     "CONTACT": "CONTACT",
-    "Read_More": "Read More"
+    "Read_More": "Read More",
+    "LOAD_MORE" : "LOAD MORE"
+
 
 }

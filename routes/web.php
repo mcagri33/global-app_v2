@@ -93,5 +93,7 @@ Route::get('/news',[SiteBlogController::class,'index'])
     ->name('site.new.index');
 Route::get('/{slug_post}',[SiteBlogController::class,'details'])
     ->name('site.new.detail');
+Route::get('/news/load-more-data','SiteBlogController@more_data');
+Route::get('/news//getPosts', [SiteBlogController::class, 'getPosts'])->name('getPosts');
 
 require __DIR__.'/auth.php';

@@ -20,7 +20,7 @@ class SiteController extends Controller
         }
         $current_language_id = Language::where('short_name',$current_short_name)->first()->id;
 
-        $bposts = BlogPost::where('language_id',$current_language_id)->where('status',1)->orderBy('created_at','desc')->get();
+        $bposts = BlogPost::where('language_id',$current_language_id)->where('status',1)->orderBy('created_at','desc')->paginate(4);
 
         return view('site.index',compact('bposts'));
     }

@@ -1478,6 +1478,7 @@
     <h2>Tell Us About Your Project Story and Project Brief</h2>
     <a href="#">START A PROJECT</a> </section>
 <!-- end work-us -->
+    @if(count($bposts)>0)
 <section class="latest-news transition">
     <div class="container">
         <div class="row">
@@ -1501,6 +1502,7 @@
     </div>
     <!-- end container -->
 </section>
+    @endif
 <!-- end latest-news -->
 <section class="get-quote transition">
     <div class="container">
