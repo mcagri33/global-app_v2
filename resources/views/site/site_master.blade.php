@@ -54,7 +54,7 @@
     <!-- end table -->
 </div>
 <!-- end search-box -->
-@include('site.layouts.header')
+
 <!-- end header -->
 @yield('site')
 
