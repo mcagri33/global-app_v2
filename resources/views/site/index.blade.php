@@ -13,13 +13,11 @@
     $current_language_id = \App\Models\Language::where('short_name',$current_short_name)->first()->id;
 @endphp
 
-
-<header class="int-header">
+<header class="header">
     <nav class="navbar navbar-default navbar-fixed-top transition">
         <div class="top-bar">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 hidden-xs">
+                <div class="row"> <div class="col-md-6 col-sm-6 hidden-xs">
                         <ul class="top-menu">
                             <li><a href="#">{{Career}}</a></li>
                             <li><a href="#">{{On_Press}}</a></li>
@@ -43,6 +41,9 @@
                             @endif
                             @if($global_setting_data->instagram)
                                 <li><a href="{{$global_setting_data->instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            @endif
+                            @if($global_setting_data->linkedin)
+                                <li><a href="{{$global_setting_data->linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             @endif
                         </ul>
                         <!-- end social-media -->
@@ -71,67 +72,57 @@
         <!-- end top-bar -->
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse"
-                        data-target="#collapse-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                        class="icon-bar"></span></button>
-                <a class="navbar-brand" href="index.html"> <img src="{{asset('assets/site/images/logo-light.png')}}"
-                                                                alt="Image" class="logo-light"> <img
-                        src="{{asset('assets/site/images/logo-dark.png')}}" alt="Image" class="logo-dark"><span
+                <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse" data-target="#collapse-nav"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                @if($global_setting_data->logo)
+                    <a class="navbar-brand" href="{{route('site.index')}}"> <img src="{{asset($global_setting_data->logo)}}"
+                                                                                 alt="Image" class="logo-light"> <img
+                            src="{{asset($global_setting_data->logo_dark)}}" alt="Image" class="logo-dark">{{--<span
                         class="since">25<br>
-        <small>years</small></span> </a></div>
-            <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="collapse-nav">
-                <ul class="top-menu visible-xs">
-                    <li><a href="#">{{Career}}</a></li>
-                    <li><a href="#">{{On_Press}}</a></li>
-                    <li><a href="#">{{Support}}</a></li>
-                </ul>
-                <!-- end top-menu -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{route('site.index')}}">{{HOME}}</a></li>
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{COMPANY}}</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="about-us.html">{{About_Us}}</a></li>
-                            <li><a href="partners.html">{{Partners}}</a></li>
-                            <li><a href="gallery.html">{{Galery}}</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="projects.html">{{PROJECTS}}</a></li>
-                    <li><a href="services.html">{{SERVICES}}</a></li>
-                    <li><a href="{{route('site.new.index')}}">{{NEWS}}</a></li>
-                    <li><a href="contact.html">{{CONTACT}}</a></li>
-                </ul>
-                <!-- end navbar-nav -->
-                <a href="#" class="quote-btn">GET QUOTE</a>
-                <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i> +38 075 92 47</span>
-                <!-- end phone -->
-                <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
-                <!-- end search -->
-            </div>
+        <small>years</small></span>--}} </a></div>
+            @else
+                <a class="navbar-brand" href="{{route('site.index')}}"> <p>{{$global_setting_data->site_title}}</p>{{--<span
+                        class="since">25<br>
+        <small>years</small></span>--}} </a></div>
+        @endif
+        <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="collapse-nav">
+            <ul class="top-menu visible-xs">
+                <li><a href="#">{{Career}}</a></li>
+                <li><a href="#">{{On_Press}}</a></li>
+                <li><a href="#">{{Support}}</a></li>
+            </ul>
+            <!-- end top-menu -->
+            <ul class="nav navbar-nav">
+                <li><a href="{{route('site.index')}}">{{HOME}}</a></li>
+                <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{COMPANY}}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-us.html">{{About_Us}}</a></li>
+                        <li><a href="partners.html">{{Partners}}</a></li>
+                        <li><a href="gallery.html">{{Galery}}</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html">{{PROJECTS}}</a></li>
+                <li><a href="services.html">{{SERVICES}}</a></li>
+                <li><a href="{{route('site.new.index')}}">{{NEWS}}</a></li>
+                <li><a href="contact.html">{{CONTACT}}</a></li>
+            </ul>
+            <!-- end navbar-nav -->
+            <a href="#" class="quote-btn">{{GET_QUOTE}}</a>
+            <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{$global_setting_data->phone}}</span>
+            <!-- end phone -->
+            {{--
+                            <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+            --}}
+            <!-- end search -->
+        </div>
             <!-- end navbar-collapse -->
         </div>
         <!-- end container -->
     </nav>
     <!-- end navbar-default -->
-    <div class="table">
-        <div class="table-cell">
-            <div class="container">
-                <h3>@yield('title')<span>.</span></h3>
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end table-cell -->
-    </div>
-
-</header>
-
-
-@section('site')
-
-    <!-- end navbar-default -->
     <div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="website-intro" data-source="gallery" >
         <div id="rev_slider_24_1" class="rev_slider fullscreenbanner tiny_bullet_slider" data-version="5.4.1">
             <ul>
-                <li data-index="rs-67" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="600"  data-thumb="{{asset('assets/site/images/hero1.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 0px 0px transparent"> <img src="{{asset('assets/site/images/hero1.jpg')}}"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="5000" data-ease="Power2.easeInOut" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="20" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+                <li data-index="rs-67" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="600"  data-thumb="preview.png"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 0px 0px transparent"> <img src="{{asset('assets/site/images/preview.png')}}"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="5000" data-ease="Power2.easeInOut" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="20" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
                     <div class="tp-caption tp-shape tp-shapewrapper tp-slicey  tp-resizeme"
                          id="slide-67-layer-9"
                          data-x="['center','center','center','center']" data-hoffset="['-112','-43','-81','44']"
@@ -452,7 +443,7 @@
                        data-paddingbottom="[0,0,0,0]"
                        data-paddingleft="[50,50,50,50]"
                        style="z-index: 21; white-space: nowrap; cursor:pointer;text-decoration: none;">DISCOVER NOW </a> </li>
-                <li data-index="rs-66" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="600"  data-thumb="../../assets/{{asset('assets/site/images/deskbg-100x50.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 0px 0px transparent"> <img src="{{asset('assets/site/images/hero2.jpg')}}"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="5000" data-ease="Power2.easeInOut" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="20" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+                <li data-index="rs-66" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="600"  data-thumb="{{asset('assets/site/images/deskbg-100x50.jpg')}}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="" data-slicey_shadow="0px 0px 0px 0px transparent"> <img src="{{asset('assets/site/images/hero2.jpg')}}"  alt="Image"  data-bgposition="center center" data-kenburns="on" data-duration="5000" data-ease="Power2.easeInOut" data-scalestart="100" data-scaleend="150" data-rotatestart="0" data-rotateend="0" data-blurstart="20" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
                     <div class="tp-caption tp-shape tp-shapewrapper tp-slicey  tp-resizeme"
                          id="slide-66-layer-9"
                          data-x="['center','center','center','center']" data-hoffset="['-112','-43','-81','44']"
@@ -1097,6 +1088,13 @@
         </div>
     </div>
     <!-- end revslider -->
+
+</header>
+
+
+@section('site')
+
+
 <section class="highlights">
     <div class="container">
         <div class="row">

@@ -41,6 +41,9 @@
                             @if($global_setting_data->instagram)
                                 <li><a href="{{$global_setting_data->instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             @endif
+                                @if($global_setting_data->linkedin)
+                                    <li><a href="{{$global_setting_data->linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                @endif
                         </ul>
                         <!-- end social-media -->
                         @if(count($global_language_data)>1)
@@ -71,11 +74,18 @@
                 <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse"
                         data-target="#collapse-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span
                         class="icon-bar"></span></button>
-                <a class="navbar-brand" href="index.html"> <img src="{{asset('assets/site/images/logo-light.png')}}"
+                @if($global_setting_data->logo)
+                <a class="navbar-brand" href="{{route('site.index')}}"> <img src="{{asset($global_setting_data->logo)}}"
                                                                 alt="Image" class="logo-light"> <img
-                        src="{{asset('assets/site/images/logo-dark.png')}}" alt="Image" class="logo-dark"><span
+                        src="{{asset($global_setting_data->logo_dark)}}" alt="Image" class="logo-dark">{{--<span
                         class="since">25<br>
-        <small>years</small></span> </a></div>
+        <small>years</small></span>--}} </a></div>
+            @else
+                <a class="navbar-brand" href="{{route('site.index')}}"> <p>{{$global_setting_data->site_title}}</p>{{--<span
+                        class="since">25<br>
+        <small>years</small></span>--}} </a></div>
+            @endif
+
             <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="collapse-nav">
                 <ul class="top-menu visible-xs">
                     <li><a href="#">{{Career}}</a></li>
@@ -98,10 +108,12 @@
                     <li><a href="contact.html">{{CONTACT}}</a></li>
                 </ul>
                 <!-- end navbar-nav -->
-                <a href="#" class="quote-btn">GET QUOTE</a>
-                <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i> +38 075 92 47</span>
+                <a href="#" class="quote-btn">{{GET_QUOTE}}</a>
+                <span class="phone"><i class="fa fa-phone" aria-hidden="true"></i>{{$global_setting_data->phone}}</span>
                 <!-- end phone -->
+{{--
                 <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+--}}
                 <!-- end search -->
             </div>
             <!-- end navbar-collapse -->
