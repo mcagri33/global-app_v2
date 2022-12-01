@@ -46,6 +46,8 @@ class CastleSettingController extends Controller
             $files[] = $request->file('logo');
         if($request->file('favicon'))
             $files[] = $request->file('favicon');
+        if($request->file('logo_dark'))
+            $files[] = $request->file('logo_dark');
 
         foreach ($files as $file) {
             if(!empty($file)) {
@@ -57,20 +59,31 @@ class CastleSettingController extends Controller
             unlink($old_img);
         }
 
-        if ($request->file('logo') || $request->file('favicon')) {
+        if ($request->file('logo') || $request->file('favicon') || $request->file('logo_dark')) {
 
             $infoId->site_title = $request->site_title;
             $infoId->logo = 'upload/setting/' . $filenames[0];
             $infoId->favicon = 'upload/setting/' . $filenames[1];
+            $infoId->logo_dark = 'upload/setting/' . $filenames[2];
             $infoId->company_desc = $request->company_desc;
+            $infoId->email = $request->email;
             $infoId->meta_name = $request->meta_name;
             $infoId->meta_description = $request->meta_description;
+            $infoId->address = $request->address;
+            $infoId->phone = $request->phone;
+            $infoId->fax = $request->fax;
+            $infoId->gsm = $request->gsm;
             $infoId->update();
         }else{
             $infoId->site_title = $request->site_title;
             $infoId->company_desc = $request->company_desc;
+            $infoId->email = $request->email;
             $infoId->meta_name = $request->meta_name;
             $infoId->meta_description = $request->meta_description;
+            $infoId->address = $request->address;
+            $infoId->phone = $request->phone;
+            $infoId->fax = $request->fax;
+            $infoId->gsm = $request->gsm;
             $infoId->update();
         }
             return redirect()->back()->with('success','Success Updated!');
@@ -98,6 +111,7 @@ class CastleSettingController extends Controller
         $socialId->twitter = $request->twitter;
         $socialId->instagram = $request->instagram;
         $socialId->youtube = $request->youtube;
+        $socialId->linkedin = $request->linkedin;
         $socialId->update();
 
         return redirect()->back()->with('success','Success Updated!');
