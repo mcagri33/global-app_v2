@@ -54,9 +54,11 @@
                 <div class="menu-title">General Settings</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Web Site İnfo</a>
+                <li> <a href="{{route('castle.setting.info')}}"><i class="bi bi-circle"></i>Web Site İnfo</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Social Media</a>
+                <li> <a href="{{route('castle.setting.social')}}"><i class="bi bi-circle"></i>Social Media</a>
+                </li>
+                <li> <a href="{{route('castle.setting.smtp')}}"><i class="bi bi-circle"></i>Smtp Settings</a>
                 </li>
                 <li> <a href="#"><i class="bi bi-circle"></i>Maniantece Mode</a>
                 </li>
