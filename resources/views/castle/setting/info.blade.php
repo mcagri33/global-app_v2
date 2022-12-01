@@ -75,6 +75,14 @@
                                 </div>
 
                                 <div class="col-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="text" name="email" class="form-control" value="{{$infoFind->email}}" placeholder="Email">
+                                    @error("email")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
                                     <label class="form-label">Meta Name</label>
                                     <input type="text" name="meta_name" class="form-control" value="{{$infoFind->meta_name}}" placeholder="Meta Name">
                                     @error("meta_name")
@@ -86,6 +94,38 @@
                                     <label class="form-label">Meta Description</label>
                                     <input type="text" name="meta_description" class="form-control" value="{{$infoFind->meta_description}}" placeholder="Meta Description">
                                     @error("meta_description")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" name="address" class="form-control" value="{{$infoFind->address}}" placeholder="Address">
+                                    @error("address")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" name="phone" class="form-control" value="{{$infoFind->phone}}" placeholder="Phone">
+                                    @error("phone")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Fax</label>
+                                    <input type="text" name="fax" class="form-control" value="{{$infoFind->fax}}" placeholder="Fax">
+                                    @error("fax")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Gsm</label>
+                                    <input type="text" name="gsm" class="form-control" value="{{$infoFind->gsm}}" placeholder="Gsm">
+                                    @error("gsm")
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>

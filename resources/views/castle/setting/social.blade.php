@@ -69,6 +69,14 @@
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Linkedin</label>
+                                    <input type="text" name="linkedin" class="form-control" value="{{$socialFind->linkedin}}" placeholder="Linkedin">
+                                    @error("linkedin")
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary px-4">Update</button>
                                 </div>
