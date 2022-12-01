@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Castle;
 
 use App\Http\Controllers\Controller;
 use App\Models\Language;
+use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -67,6 +68,12 @@ class CastleLanguageController extends Controller
         $languageAdd->short_name = $request->short_name;
         $languageAdd->is_default = $request->is_default;
         $languageAdd->save();
+
+        // When create language it will open settings with id
+        $setting = new Setting();
+        $setting->id = Str::uuid();
+        $setting->language_id = $languageAdd->id;
+        $setting->save();
 
         $test_file = file_get_contents(resource_path('language/sample.json'));
         file_put_contents(resource_path('language/' . $request->short_name . '.json'), $test_file);
