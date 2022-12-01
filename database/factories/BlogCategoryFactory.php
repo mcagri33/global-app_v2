@@ -26,7 +26,7 @@ class BlogCategoryFactory extends Factory
         return [
             'id' => Str::uuid(),
             "name"=>$title,
-            "language_id" => "fd1282fa-8c96-4073-ba2e-16f1c55be741",
+            "language_id" => "944f7bc8-e18e-44d4-a3f5-5dd8aa729ddd",
             "slug" =>  $slug,
             "status" => 1,
         ];
