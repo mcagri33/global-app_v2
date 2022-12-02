@@ -115,19 +115,8 @@
             </ul>
         </li>
 
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bi bi-basket2-fill"></i>
-                </div>
-                <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Page List</a>
+                <li> <a href="{{route('castle.page.index')}}"><i class="bi bi-circle"></i>Pages</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>Page Add</a>
-                </li>
-            </ul>
-        </li>
 
         <li>
             <a href="javascript:;" class="has-arrow">

@@ -10,6 +10,7 @@ use App\Http\Controllers\Castle\CastleBlogPostController;
 use App\Http\Controllers\Site\SiteLanguageController;
 use App\Http\Controllers\Site\SiteBlogController;
 use App\Http\Controllers\Castle\CastleSettingController;
+use App\Http\Controllers\Castle\CastlePageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,19 @@ Route::group(['prefix' => 'castle/bpost', 'middleware' => 'auth'], function () {
         ->name('castle.bpost.update');
     Route::get('/delete/{id}', [CastleBlogPostController::class, 'destroy'])
         ->name('castle.bpost.delete');
+});
+
+Route::group(['prefix' => 'castle/page', 'middleware' => 'auth'], function () {
+    Route::get('/', [CastlePageController::class, 'index'])
+        ->name('castle.page.index');
+    Route::post('/store', [CastlePageController::class, 'store'])
+        ->name('castle.page.store');
+    Route::get('/edit/{id}', [CastlePageController::class, 'edit'])
+        ->name('castle.page.edit');
+    Route::post('/update', [CastlePageController::class, 'update'])
+        ->name('castle.page.update');
+    Route::get('/delete/{id}', [CastlePageController::class, 'destroy'])
+        ->name('castle.page.delete');
 });
 
 Route::group(['prefix' => 'castle/language', 'middleware' => 'auth'], function () {
